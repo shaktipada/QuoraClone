@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New User Registration</title>
+    </head>
+    <body>
+        <h3>New User Register</h3>
+        <form name="newprofileform" method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Register">
+        </form>
+        <a href="{% url 'login_page' %}">if existing user login here </a>
+    </body>
+</html>

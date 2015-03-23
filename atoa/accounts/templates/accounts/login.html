@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <h1>A2A Login</h1>
+        <form name="loginform" method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="login">
+        </form>
+        <a href="{% url 'profile_page' %}">not a user yet ?? click here !!</a>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Questions</title>
+    </head>
+    <body>
+        <h2>Question from all User</h2>
+        <br/>
+        {% for post in posts %}
+            <a href="{% url 'question_page' post.id  %}"><h4>{{ post.title }}</h4></a>
+            {% if post.user == user %}
+                <form action="{% url 'del_question_page' post.id %}" method="POST">
+                    <input type="submit" value="delete">
+                </form>
+            {% endif %}
+            <p>{{ post.created_at|date:"l, F jS" }}</p>
+        {% endfor %}
+        <br/>
+        <p><a href="{% url 'logout_page' %}">logout</a></p>
+    </body>
+</html>
